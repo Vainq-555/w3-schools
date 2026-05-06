@@ -16,13 +16,10 @@ A professional, high-performance Text User Interface (TUI) for learning from [W3
 
 ## 🛠 Installation
 
-To install `w3-schools` locally in your Termux environment:
-
-1. Clone or navigate to the project directory.
-2. Run the following command:
+To install `w3-schools` from PyPI:
 
 ```bash
-pip install -e .
+pip install w3-schools
 ```
 
 ## 🚀 Usage
