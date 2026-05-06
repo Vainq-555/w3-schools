@@ -4,17 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "w3-schools"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
-  { name="Termux Learner", email="learner@example.com" },
+  { name="kyle Votes", email="kylevotes@gmail.com" },
 ]
 description = "A professional TUI for learning from W3Schools inside Termux."
 readme = "README.md"
 requires-python = ">=3.8"
+license = { text = "Custom: Non-profit, Educational Use Only. No Reverse Engineering." }
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Topic :: Education",
+    "Intended Audience :: Education",
 ]
 dependencies = [
     "textual>=0.80.0",
