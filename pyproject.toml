@@ -4,26 +4,33 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "w3-schools"
-version = "0.1.3"
+version = "0.1.4"
 authors = [
   { name="kyle Votes", email="kylevotes@gmail.com" },
 ]
 description = "A professional TUI for learning from W3Schools inside Termux."
 readme = "README.md"
 requires-python = ">=3.8"
-license = { file = "LICENSE" }
+license = { text = "MIT" }
+keywords = ["w3schools", "termux", "tui", "learning", "terminal"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Education",
     "Intended Audience :: Education",
+    "Environment :: Console",
 ]
 dependencies = [
     "textual>=0.80.0",
     "httpx>=0.24.0",
     "beautifulsoup4>=4.12.0",
 ]
+
+[project.urls]
+"Homepage" = "https://github.com/Vainq-555/w3-schools"
+"Bug Tracker" = "https://github.com/Vainq-555/w3-schools/issues"
+"Source Code" = "https://github.com/Vainq-555/w3-schools"
 
 [project.scripts]
 w3-schools = "w3_schools.main:run"
