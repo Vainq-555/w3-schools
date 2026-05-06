@@ -1,6 +1,10 @@
 import httpx
 import subprocess
+import sys
 from bs4 import BeautifulSoup
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, Static, Tree, ContentSwitcher, LoadingIndicator, Markdown, Button
 from textual.containers import Horizontal, VerticalScroll, Container, Vertical
@@ -171,6 +175,30 @@ class W3SchoolsApp(App):
         self.push_screen(CategorySelect())
 
 def run():
+    if "--info" in sys.argv:
+        console = Console()
+        info_text = Text.assemble(
+            ("\n📦 Package Overview\n", "bold cyan"),
+            ("Name: ", "bold"), "w3-schools\n",
+            ("Version: ", "bold"), "0.1.5\n",
+            ("Summary: ", "bold"), "Terminal UI for learning from W3Schools\n",
+            ("License: ", "bold"), "MIT\n",
+            ("\n👤 Author\n", "bold green"),
+            ("Name: ", "bold"), "kyle Votes\n",
+            ("Email: ", "bold"), "kylevotes@gmail.com\n",
+            ("\n📂 Installation\n", "bold yellow"),
+            ("Location: ", "bold"), f"{sys.prefix}/lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages\n",
+            ("\n🔗 Dependencies\n", "bold magenta"),
+            ("- beautifulsoup4\n", ""),
+            ("- httpx\n", ""),
+            ("- textual\n", ""),
+            ("\n📌 Notes\n", "bold blue"),
+            ("- Installed in global environment (not isolated)\n", ""),
+            ("- Designed for Termux CLI usage\n", "")
+        )
+        console.print(Panel(info_text, title="[bold white]w3-schools INFO[/]", border_style="cyan", expand=False))
+        sys.exit(0)
+
     app = W3SchoolsApp()
     app.run()
 
